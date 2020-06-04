@@ -220,7 +220,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_porAprobacion">Porcentaje Aprobatorio</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_porAprobacion" name="porAprobacion" placeholder="Ingrese porAprobacion" type="text" maxlength="10"/>
+													<input class="form-control" id="id_act_porAprobacion" name="porAprobacion" placeholder="Ingrese porAprobacion" type="text" maxlength="12"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
