@@ -6,10 +6,10 @@ public class Examen {
 	private String nombre;
 	private String descripcion;
 	private String claves;
-	private int numPreguntas;
-	private int valorTotal;
+	private int numPreguntas;	
 	private int valorAprobatorio;
 	private int porAprobacion;
+	private int valorTotal;
 	
 	
 	public int getIdexamen() {
