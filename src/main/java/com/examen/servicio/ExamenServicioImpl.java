@@ -6,32 +6,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.examen.entidad.Examen;
+import com.examen.repositorio.ExamenRepositorio;
 
 @Service
 public class ExamenServicioImpl implements ExamenServicio {
 
 	@Autowired
-	private ExamenServicio servicio;
+	private ExamenRepositorio repositorio;
 	
 	
 	@Override
 	public int insertaExamen(Examen obj) {
-		return servicio.insertaExamen(obj);
+		return repositorio.inserta(obj);
 	}
 
 	@Override
 	public int eliminaExamen(int idExamen) {
-		return servicio.eliminaExamen(idExamen);
+		return repositorio.elimina(idExamen);
 	}
 
 	@Override
 	public int actualizaExamen(Examen obj) {
-		return servicio.actualizaExamen(obj);
+		return repositorio.actualiza(obj);
 	}
 
 	@Override
 	public List<Examen> listaExamen(int idExamen) {
-		return servicio.listaExamen(idExamen);
+		return repositorio.lista(idExamen);
 	}
 
 }
