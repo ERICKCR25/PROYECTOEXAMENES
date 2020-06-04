@@ -35,4 +35,10 @@ public class ExamenServicioImpl implements ExamenServicio {
 		return repositorio.lista(idExamen);
 	}
 
+	@Override
+	public List<Examen> listaExamenN(String s) {
+		return repositorio.listaN(s);
+	}
+	
+	
 }

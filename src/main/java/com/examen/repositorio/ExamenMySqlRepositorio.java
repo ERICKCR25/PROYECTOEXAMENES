@@ -62,5 +62,30 @@ public class ExamenMySqlRepositorio implements ExamenRepositorio {
 		});
 		return lista;
 	}
+	
+	public List<Examen> listaN(String s) {
+		String sql = "select * from examen where nombre like ?";
+		Object[] val = { s + "%" };
+
+		List<Examen> lista = jdbcTemplate.query(sql, val, new RowMapper<Examen>() {
+			@Override
+			public Examen mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Examen obj = new Examen();
+				obj.setIdexamen(rs.getInt(1));
+				obj.setNombre(rs.getString(2));
+				obj.setDescripcion(rs.getString(3));
+				obj.setClaves(rs.getString(4));
+				obj.setNumPreguntas(rs.getInt(5));
+				obj.setValorAprobatorio(rs.getInt(6));
+				obj.setPorAprobacion(rs.getInt(7));
+
+				obj.setValorTotal(rs.getInt(8));
+				return obj;
+			}
+		});
+		return lista;
+	}
+	
+	
 
 }

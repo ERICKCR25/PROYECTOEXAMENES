@@ -24,7 +24,7 @@ public class ExamenController {
 	
 	@RequestMapping("/verExamen")
 	public String verPagina(Model m) {
-		List<Examen> list = eservicio.listaExamen(0);
+		List<Examen> list = eservicio.listaExamenN("");
 		m.addAttribute("Examenes", list);
 		return "crudExamen";
 	}
@@ -32,7 +32,7 @@ public class ExamenController {
 	@RequestMapping("/registraExamen")
 	public String agregaExamen( Model m,Examen obj) {			
 		eservicio.insertaExamen(obj);	
-		List<Examen> list = eservicio.listaExamen(0);
+		List<Examen> list = eservicio.listaExamenN("");
 		m.addAttribute("examenes", list);
 		return "crudExamen";
 	}
@@ -40,7 +40,7 @@ public class ExamenController {
 	@RequestMapping("/actualizaExamen")
 	public String actualizaExamen( Model m,Examen obj) {			
 		eservicio.actualizaExamen(obj);	
-		List<Examen> list = eservicio.listaExamen(0);
+		List<Examen> list = eservicio.listaExamenN("");
 		m.addAttribute("examenes", list);
 		return "crudExamen";	
 	}	
@@ -49,7 +49,7 @@ public class ExamenController {
 	@RequestMapping("/eliminaExamen")
 	public String eliminaExamen(@RequestParam Map<String,String> params, Model m) {			
 		eservicio.eliminaExamen(Integer.parseInt(params.get("id")));	
-		List<Examen> list = eservicio.listaExamen(0);
+		List<Examen> list = eservicio.listaExamenN("");
 		m.addAttribute("examenes", list);
 		return "crudExamen";
 	}
@@ -64,6 +64,11 @@ public class ExamenController {
 	}
 	
 		
-	
+	@RequestMapping("/listaExamenN")
+	public String listaExamenN(@RequestParam Map<String,String> params, Model m) {
+		List<Examen> list = eservicio.listaExamenN((params.get("filtro")));
+		m.addAttribute("examenes", list);
+		return "crudExamen";
+	}
 	
 }

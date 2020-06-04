@@ -9,4 +9,5 @@ public interface ExamenServicio {
 	public abstract int eliminaExamen(int idExamen);
 	public abstract int actualizaExamen(Examen obj);
 	public abstract List<Examen> listaExamen(int idExamen);
+	public abstract List<Examen> listaExamenN(String s);
 }

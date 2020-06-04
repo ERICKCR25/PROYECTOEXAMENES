@@ -25,7 +25,7 @@
 			  		<input type="hidden" id="id_elimina" name="id">
 			  </form>	
 				
-		       <form accept-charset="UTF-8"  action="listaExamen" class="simple_form" id="defaultForm2"  method="get">
+		       <form accept-charset="UTF-8"  action="listaExamenN" class="simple_form" id="defaultForm2"  method="get">
 		       		<div class="row">
 						<div class="col-md-3">	
 							<div class="form-group">
