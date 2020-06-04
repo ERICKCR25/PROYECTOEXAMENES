@@ -15,18 +15,18 @@
 <link rel="stylesheet" href="css/dataTables.bootstrap.min.css" />
 <link rel="stylesheet" href="css/bootstrapValidator.css" />
 
-<title>AÑADIR EVENTO</title>
+<title>AÑADIR PREGUNTA</title>
 </head>
 <body>
 
 	<div class="container">
-		<h1>Crud de Evento</h1>
+		<h1>Crud de Pregunta</h1>
 		<div class="col-md-23">
-			<form id="idFormElimina" action="eliminaEvento">
+			<form id="idFormElimina" action="eliminaPregunta">
 				<input type="hidden" id="id_elimina" name="id">
 			</form>
 
-			<form accept-charset="UTF-8" action="listaEventoN"
+			<form accept-charset="UTF-8" action="listaPregunta"
 				class="simple_form" id="defaultForm2" method="get">
 				<div class="row">
 					<div class="col-md-3">
@@ -52,33 +52,29 @@
 					<div class="col-md-12">
 						<div class="content">
 
-							<table id="tableEvento"
+							<table id="tablePregunta"
 								class="table table-striped table-bordered">
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>Nombre</th>
-										<th>Fecha de Evento</th>
-										<th>Fecha de publicacionto</th>
-										<th>Fecha de Regustro</th>
-										<th>idEmpresa</th>
+										<th>Nombre Pregunta</th>
+										<th>Enunciado</th>
+										<th>id Materia</th>
 										<th>Actualiza</th>
 										<th>Elimina</th>
 									</tr>
 								</thead>
 								<tbody>
 
-									<c:forEach items="${eventos}" var="x">
+									<c:forEach items="${preguntas}" var="x">
 										<tr>
-											<td>${x.idEvento}</td>
-											<td>${x.nombre}</td>
-											<td>${x.fechaEvento}</td>
-											<td>${x.fechaPublicacion}</td>
-											<td>${x.fechaRegistro}</td>
-											<td>${x.idEmpresa}</td>
+											<td>${x.idPregunta}</td>
+											<td>${x.nPregunta}</td>
+											<td>${x.enunciado}</td>
+											<td>${x.idMateria}</td>
 											<td>
 												<button type='button' data-toggle='modal'
-													onclick="editar('${x.idEvento}','${x.nombre}','${x.fechaEvento}','${x.fechaPublicacion}','${x.fechaRegistro}','${x.idEmpresa}');"
+													onclick="editar('${x.idPregunta}','${x.nPregunta}','${x.enunciado}','${x.idMateria}');"
 													class='btn btn-success'
 													style='background-color: hsla(233, 100%, 100%, 0);'>
 													<img src='images/edit.gif' width='auto' height='auto' />
@@ -86,7 +82,7 @@
 											</td>
 											<td>
 												<button type='button' data-toggle='modal'
-													onclick="eliminar('${x.idEvento}');"
+													onclick="eliminar('${x.idPregunta}');"
 													class='btn btn-success'
 													style='background-color: hsla(233, 100%, 100%, 0);'>
 													<img src='images/delete.gif' width='auto' height='auto' />
@@ -113,70 +109,53 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4>
 							<span class="glyphicon glyphicon-ok-sign"></span> Registro de
-							Evento
+							Pregunta
 						</h4>
 					</div>
 					<div class="modal-body" style="padding: 20px 10px;">
 						<form id="id_form_registra" accept-charset="UTF-8"
-							action="registraEvento" class="form-horizontal" method="post">
+							action="registraPregunta" class="form-horizontal" method="post">
 							<div class="panel-group" id="steps">
 								<!-- Step 1 -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#steps"
-												href="#stepOne">Datos del Evento</a>
+												href="#stepOne">Datos de la Pregunta</a>
 										</h4>
 									</div>
 									<div id="stepOne" class="panel-collapse collapse in">
 										<div class="panel-body">
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_nombre">Nombre</label>
+												<label class="col-lg-3 control-label" for="id_reg_nPregunta">Nombre de Pregunta</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_reg_nombre"
-														name="nombre" placeholder="Ingrese el Nombre" type="text"
+													<input class="form-control" id="id_reg_nPregunta"
+														name="nPregunta" placeholder="Ingrese el nPregunta" type="text"
 														maxlength="500" />
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-lg-3 control-label"
-													for="id_reg_fechaEvento">Fecha de Evento</label>
+													for="id_reg_enunciado">Enunciado</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_reg_fechaEvento"
-														name="fechaEvento"
-														placeholder="Ingrese fechaEvento" type="text"
-														maxlength="10" />
+													<input class="form-control" id="id_reg_enunciado"
+														name="enunciado"
+														placeholder="Ingrese enunciado" type="text"
+														maxlength="500" />
 												</div>
 											</div>
 										
 											<div class="form-group">
 												<label class="col-lg-3 control-label"
-													for="id_reg_fechaPublicacion">Fecha de Publicacion</label>
+													for="id_reg_idMateria">Id Materia</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_reg_fechaPublicacion"
-														name="fechaPublicacion"
-														placeholder="Ingrese fechaPublicacion" type="text"
+													<input class="form-control" id="id_reg_idMateria"
+														name="idMateria"
+														placeholder="Ingrese idMateria" type="text"
 														maxlength="10" />
 												</div>
-											</div>
-
-											<div class="form-group">
-												<label class="col-lg-3 control-label"
-													for="id_reg_fechaRegistro">Fecha de Registro</label>
-												<div class="col-lg-5">
-													<input class="form-control" id="id_reg_fechaRegistro"
-														name="fechaRegistro" placeholder="Ingrese fechaRegistro"
-														type="text" maxlength="10" />
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_reg_idEmpresa">Id Empresa</label>
-												<div class="col-lg-5">
-													<input class="form-control" id="id_reg_idEmpresa"
-														name="idEmpresa" placeholder="Ingrese idEmpresa" type="text"
-														maxlength="10" />
-												</div>
-											</div>
+											</div>									
+										
 											<div class="form-group">
 												<div class="col-lg-9 col-lg-offset-3">
 													<button type="submit" class="btn btn-primary">REGISTRA</button>
@@ -204,19 +183,19 @@
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 						<h4>
 							<span class="glyphicon glyphicon-ok-sign"></span> Actualiza
-							Evento
+							Pregunta
 						</h4>
 					</div>
 					<div class="modal-body" style="padding: 20px 10px;">
 						<form id="id_form_actualiza" accept-charset="UTF-8"
-							action="actualizaEvento" class="form-horizontal" method="post">
+							action="actualizaPregunta" class="form-horizontal" method="post">
 							<div class="panel-group" id="steps">
 								<!-- Step 1 -->
 								<div class="panel panel-default">
 									<div class="panel-heading">
 										<h4 class="panel-title">
 											<a data-toggle="collapse" data-parent="#steps"
-												href="#stepOne">Datos del Evento</a>
+												href="#stepOne">Datos del Pregunta</a>
 										</h4>
 									</div>
 									<div id="stepOne" class="panel-collapse collapse in">
@@ -225,59 +204,37 @@
 												<label class="col-lg-3 control-label" for="id_ID">ID</label>
 												<div class="col-lg-5">
 													<input class="form-control" id="id_ID" readonly="readonly"
-														name="idEvento" type="text" maxlength="100" />
+														name="idPregunta" type="text" maxlength="100" />
 												</div>
 											</div>
 											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_nombre">Nombre</label>
+												<label class="col-lg-3 control-label" for="id_act_nPregunta">Nombre de la Pregunta</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_act_nombre"
-														name="nombre" placeholder="Ingrese el nombre" type="text"
+													<input class="form-control" id="id_act_nPregunta"
+														name="nPregunta" placeholder="Ingrese el nPregunta" type="text"
 														maxlength="500" />
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-lg-3 control-label"
-													for="id_act_fechaEvento">Fecha de Evento</label>
+													for="id_act_enunciado">Enunciado</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_act_fechaEvento"
-														name="fechaEvento"
-														placeholder="Ingrese el fechaEvento" type="text"
-														maxlength="10" />
+													<input class="form-control" id="id_act_enunciado"
+														name="enunciado"
+														placeholder="Ingrese el enunciado" type="text"
+														maxlength="500" />
 												</div>
 											</div>
 											<div class="form-group">
 												<label class="col-lg-3 control-label"
-													for="id_act_fechaPublicacion">Fecha de Publicacion</label>
+													for="id_act_idMateria">Id Materia</label>
 												<div class="col-lg-5">
-													<input class="form-control" id="id_act_fechaPublicacion"
-														name="fechaPublicacion"
-														placeholder="Ingrese fechaPublicacion" type="text"
+													<input class="form-control" id="id_act_idMateria"
+														name="idMateria"
+														placeholder="Ingrese idMateria" type="text"
 														maxlength="10" />
 												</div>
 											</div>
-											
-																						
-											<div class="form-group">
-												<label class="col-lg-3 control-label"
-													for="id_act_fechaRegistro">Fecha de Registro</label>
-												<div class="col-lg-5">
-													<input class="form-control" id="id_act_fechaRegistro"
-														name="fechaRegistro" placeholder="Ingrese el fechaRegistro"
-														type="text" maxlength="10" />
-												</div>
-											</div>
-											
-											
-											<div class="form-group">
-												<label class="col-lg-3 control-label" for="id_act_idEmpresa">Id Empresa</label>
-												<div class="col-lg-5">
-													<input class="form-control" id="id_act_idEmpresa"
-														name="idEmpresa" placeholder="Ingrese idEmpresa" type="text"
-														maxlength="10" />
-												</div>
-											</div>
-											
 											<div class="form-group">
 												<div class="col-lg-9 col-lg-offset-3">
 													<button type="submit" class="btn btn-primary">ACTUALIZA</button>
@@ -308,18 +265,16 @@
 			$('#idModalRegistra').modal("show");
 		}
 
-		function editar(id, nombre, fechaEvento, fechaPublicacion, fechaRegistro,idEmpresa ) {
+		function editar(id, nPregunta, enunciado, idMateria ) {
 			$('input[id=id_ID]').val(id);
-			$('input[id=id_act_nombre]').val(nombre);
-			$('input[id=id_act_fechaEvento]').val(fechaEvento);
-			$('input[id=id_act_fechaPublicacion]').val(fechaPublicacion);
-			$('input[id=id_act_fechaRegistro]').val(fechaRegistro);
-			$('input[id=id_act_idEmpresa]').val(idEmpresa);
+			$('input[id=id_act_nPregunta]').val(nPregunta);
+			$('input[id=id_act_enunciado]').val(enunciado);
+			$('input[id=id_act_idMateria]').val(idMateria);
 			$('#idModalActualiza').modal("show");
 		}
 
 		$(document).ready(function() {
-			$('#tableEvento').DataTable();
+			$('#tablePregunta').DataTable();
 		});
 	</script>
 
@@ -334,68 +289,45 @@
 								validating : 'glyphicon glyphicon-refresh'
 							},
 							fields : {
-								nombre : {
-									selector : '#id_reg_nombre',
+								nPregunta : {
+									selector : '#id_reg_nPregunta',
 									validators : {
 										notEmpty : {
-											message : 'El nombre es un campo obligatorio'
+											message : 'El nombre de la preguntaes un campo obligatorio'
 										},
 										stringLength : {
-											message : 'El nombre es de 2 a 500 caracteres',
+											message : 'El nombre de la pregunta es de 2 a 500 caracteres',
 											min : 2,
 											max : 500
 										}
 									}
 								},
-								fechaEvento: {
-									selector : '#id_reg_fechaEvento',
+								enunciado: {
+									selector : '#id_reg_enunciado',
 									validators : {
 										notEmpty : {
-											message : 'fechaEvento es un campo obligatorio'
+											message : 'El enunciado es un campo obligatorio'
 										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
+										stringLength : {
+											message : 'El enunciado de la pregunta es de 2 a 500 caracteres',
+											min : 2,
+											max : 500
 										}
 									}
 								},
-								fechaPublicacion : {
-									selector : '#id_reg_fechaPublicacion',
+								idMateria : {
+									selector : '#id_reg_idMateria',
 									validators : {
 										notEmpty : {
-											message : 'fechaPublicacion un campo obligatorio'
-										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
-										}
-									}
-								},
-								fechaRegistro : {
-									selector : '#id_reg_fechaRegistro',
-									validators : {
-										notEmpty : {
-											message : 'El fechaRegistro es un campo obligatorio'
-										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
-										}
-									}
-								},
-								
-								idEmpresa : {
-									selector : '#id_reg_idEmpresa',
-									validators : {
-										notEmpty : {
-											message : 'El idEmpresa es un campo obligatorio'
+											message : 'idMateria un campo obligatorio'
 										},
 										regexp : {
 											regexp : /^[0-9]+$/,
-											message : 'El idEmpresa es  entero '
+											message : 'El id MAteria es entero'
 										}
 									}
-								},
+								},								
+								
 							}
 						});
 	</script>
@@ -412,80 +344,57 @@
 							},
 							fields : {
 
-								idEvento : {
+								idPregunta : {
 									selector : '#id_ID',
 									validators : {
 										notEmpty : {
-											message : 'El idEvento es un campo obligatorio'
+											message : 'El idPregunta un campo obligatorio'
 										},
 										regexp : {
 											regexp : /^[0-9]+$/,
-											message : 'El id Evento es  entero'
+											message : 'El id Pregunta es  entero'
 										}
 									}
 								},
-								nombre : {
-									selector : '#id_act_nombre',
+								nPregunta : {
+									selector : '#id_act_nPregunta',
 									validators : {
 										notEmpty : {
-											message : 'El nombre es un campo obligatorio'
+											message : 'El nombre de la preguntaes un campo obligatorio'
 										},
 										stringLength : {
-											message : 'El nombre es de 2 a 500 caracteres',
+											message : 'El nombre de la pregunta es de 2 a 500 caracteres',
 											min : 2,
 											max : 500
 										}
 									}
 								},
-								fechaEvento: {
-									selector : '#id_act_fechaEvento',
+								enunciado: {
+									selector : '#id_act_enunciado',
 									validators : {
 										notEmpty : {
-											message : 'fechaEvento es un campo obligatorio'
+											message : 'El enunciado es un campo obligatorio'
 										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
+										stringLength : {
+											message : 'El enunciado de la pregunta es de 2 a 500 caracteres',
+											min : 2,
+											max : 500
 										}
 									}
 								},
-								fechaPublicacion : {
-									selector : '#id_act_fechaPublicacion',
+								idMateria : {
+									selector : '#id_act_idMateria',
 									validators : {
 										notEmpty : {
-											message : 'fechaPublicacion un campo obligatorio'
-										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
-										}
-									}
-								},
-								fechaRegistro : {
-									selector : '#id_act_fechaRegistro',
-									validators : {
-										notEmpty : {
-											message : 'El fechaRegistro es un campo obligatorio'
-										},
-										regexp : {
-											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
-											message : 'Fecha es aa-mm-dd'
-										}
-									}
-								},
-								
-								idEmpresa : {
-									selector : '#id_act_idEmpresa',
-									validators : {
-										notEmpty : {
-											message : 'El idEmpresa es un campo obligatorio'
+											message : 'idMateria un campo obligatorio'
 										},
 										regexp : {
 											regexp : /^[0-9]+$/,
-											message : 'El idEmpresa es  entero '
+											message : 'El id MAteria es entero'
 										}
 									}
-								},
+								},								
+								
 							}
 						});
 	</script>

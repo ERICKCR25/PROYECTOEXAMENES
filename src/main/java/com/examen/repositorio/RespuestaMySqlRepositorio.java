@@ -33,7 +33,7 @@ public class RespuestaMySqlRepositorio implements RespuestaRepositorio {
 
 	@Override
 	public int elimina(int idRespuesta) {
-		String sql="update respuesta set detalle='',idMateria='sin asignar' where idRespuesta = ?";
+		String sql="update respuesta set detalle='' where idRespuesta = ?";
 		Object[] val= {idRespuesta};
 		return jdbcTemplate.update(sql,val);
 	}

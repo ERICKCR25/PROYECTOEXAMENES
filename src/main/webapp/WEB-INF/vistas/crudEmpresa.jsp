@@ -391,10 +391,9 @@
 										notEmpty : {
 											message : 'El correo es un campo obligatorio'
 										},
-										stringLength : {
-											message : 'direccion es de 2 a 500 caracteres',
-											min : 2,
-											max : 500
+										regexp : {
+											regexp : /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/,
+											message : 'El correo contiene @'
 										}
 									}
 								},
@@ -427,7 +426,7 @@
 									}
 								},
 								nombre : {
-									selector : '#id_reg_nombre',
+									selector : '#id_act_nombre',
 									validators : {
 										notEmpty : {
 											message : 'El nombre es un campo obligatorio'
@@ -440,7 +439,7 @@
 									}
 								},
 								ruc: {
-									selector : '#id_reg_ruc',
+									selector : '#id_act_ruc',
 									validators : {
 										notEmpty : {
 											message : 'ruc es un campo obligatorio'
@@ -452,7 +451,7 @@
 									}
 								},
 								direccion : {
-									selector : '#id_reg_direccion',
+									selector : '#id_act_direccion',
 									validators : {
 										notEmpty : {
 											message : 'direccion un campo obligatorio'
@@ -465,7 +464,7 @@
 									}
 								},
 								idDistrito : {
-									selector : '#id_reg_idDistrito',
+									selector : '#id_act_idDistrito',
 									validators : {
 										notEmpty : {
 											message : 'El idDistrito es un campo obligatorio'
@@ -478,15 +477,14 @@
 								},
 								
 								correo : {
-									selector : '#id_reg_correo',
+									selector : '#id_act_correo',
 									validators : {
 										notEmpty : {
 											message : 'El correo es un campo obligatorio'
 										},
-										stringLength : {
-											message : 'direccion es de 2 a 500 caracteres',
-											min : 2,
-											max : 500
+										regexp : {
+											regexp : /^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$/,
+											message : 'El correo contiene @'
 										}
 									}
 								},

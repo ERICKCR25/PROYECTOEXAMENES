@@ -456,10 +456,9 @@
 										notEmpty : {
 											message : 'El fechNac es un campo obligatorio'
 										},
-										stringLength : {
-											message : 'El fechNac es de 11 caracteres',
-											min : 10,
-											max : 10
+										regexp : {
+											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
+											message : 'Fecha es aa-mm-dd'
 										}
 									}
 								},
@@ -586,10 +585,9 @@
 										notEmpty : {
 											message : 'El fechNac es un campo obligatorio'
 										},
-										stringLength : {
-											message : 'El apellidoMaternos es de 2 a 500 caracteres',
-											min : 10,
-											max : 10
+										regexp : {
+											regexp : /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/,
+											message : 'Fecha es aa-mm-dd'
 										}
 									}
 								},

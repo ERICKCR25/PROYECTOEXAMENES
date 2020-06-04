@@ -41,12 +41,12 @@ public class PreguntaMySqlRepositorio implements PreguntaRepositorio {
 
 	@Override
 	public List<Pregunta> lista(String s) {
-		List<Pregunta> lista = jdbcTemplate.query("select * from pregunta  where enunciado like ?",new Object[] {s+"%"}, new RowMapper<Pregunta>() {
+		List<Pregunta> lista = jdbcTemplate.query("select * from pregunta  where nPregunta like ?",new Object[] {s+"%"}, new RowMapper<Pregunta>() {
             @Override
             public Pregunta mapRow(ResultSet rs, int rowNum) throws SQLException {
             	Pregunta obj = new Pregunta();
             	obj.setIdPregunta(rs.getInt(1));
-            	obj.setnPregunta(rs.getInt(2));
+            	obj.setnPregunta(rs.getString(2));
             	obj.setEnunciado(rs.getString(3));
             	obj.setIdMateria(rs.getInt(4));           	         	
                 return obj;
