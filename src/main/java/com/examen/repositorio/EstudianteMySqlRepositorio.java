@@ -35,7 +35,7 @@ public class EstudianteMySqlRepositorio implements EstudianteRepositorio {
 
 	@Override
 	public int actualiza(Estudiante obj) {
-		String sql = "update estudiante set nombre=?,apellidoPaterno=?, apellidoMaterno=?,dni=?,fecnaci=?,colegio=?,celular=?,idDistrito=? where idestudiante = ?";
+		String sql = "update estudiante set nombre=?,apellidoPaterno=?, apellidoMaterno=?,dni=?,fechNac=?,colegio=?,celular=?,idDistrito=? where idestudiante = ?";
 		Object[] val = { obj.getNombre(), obj.getApellidoPaterno(), obj.getApellidoMaterno(), obj.getDni(),
 				obj.getFechNac(), obj.getColegio(), obj.getCelular(), obj.getIdDistrito(), obj.getIdEstudiante() };
 		return jdbcTemplate.update(sql, val);

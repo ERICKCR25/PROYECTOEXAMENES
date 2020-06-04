@@ -34,7 +34,7 @@ public class EventoMySqlRepositorio implements EventoRepositorio {
 
 	@Override
 	public int actualiza(Evento obj) {
-		String sql = "update evento set nombre=?,fechaEvento=?, fechaPublicacion=?,fechaRegistro=?;idEmpresa=? where idEvento = ?";
+		String sql = "update evento set nombre=?,fechaEvento=?, fechaPublicacion=?,fechaRegistro=?,idEmpresa=? where idEvento = ?";
 		Object[] val = { obj.getNombre(), obj.getFechaEvento(), obj.getFechaPublicacion(), obj.getFechaRegistro(),
 				obj.getIdEmpresa(),obj.getIdEvento() };
 		return jdbcTemplate.update(sql, val);
