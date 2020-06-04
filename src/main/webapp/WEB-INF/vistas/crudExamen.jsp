@@ -201,7 +201,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_descripcion">descripcion</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_descripcion" name="descripcion" placeholder="Ingrese el descripcion" type="text" maxlength="200"/>
+													<input class="form-control" id="id_act_descripcion" name="descripcion" placeholder="Ingrese el descripcion" type="text" maxlength="300"/>
 		                                        </div>
 		                                    </div>
 		                                   <input type="hidden" name="claves" id="id_act_claves" value="">
