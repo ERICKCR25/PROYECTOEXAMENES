@@ -214,7 +214,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_valorAprobatorio">Puntaje Aprobatorio</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_valorAprobatorio" name="valorAprobatorio" placeholder="Ingrese valorAprobatorio" type="text" maxlength="10"/>
+													<input class="form-control" id="id_act_valorAprobatorio" name="valorAprobatorio" placeholder="Ingrese valorAprobatorio" type="text" maxlength="15"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
