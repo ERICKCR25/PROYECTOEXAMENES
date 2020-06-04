@@ -19,7 +19,7 @@ public class PreguntaServicioImpl implements PreguntaServicio {
 	}
 
 	@Override
-	public int elimintaPregunta(int idPregunta) {
+	public int eliminaPregunta(int idPregunta) {
 		return repositorio.elimina(idPregunta);
 	}
 

@@ -17,22 +17,22 @@ public class RespuestaServicioImpl implements RespuestaServicio {
 	private RespuestaRepositorio repositorio;
 	
  	@Override
-	public int inserta(Respuesta obj) {
+	public int insertaRespuesta(Respuesta obj) {
 		return repositorio.inserta(obj);
 	}
 
 	@Override
-	public int elimina(int idRespuesta) {
+	public int eliminaRespuesta(int idRespuesta) {
 		return repositorio.elimina(idRespuesta);
 	}
 
 	@Override
-	public int actualiza(Respuesta obj) {
+	public int actualizaRespuesta(Respuesta obj) {
 		return repositorio.actualiza(obj);
 	}
 
 	@Override
-	public List<Respuesta> lista(int idPregunta) {
+	public List<Respuesta> listaRespuesta(int idPregunta) {
 		return repositorio.lista(idPregunta);
 	}
 

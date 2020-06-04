@@ -20,7 +20,7 @@ public class PreguntaMySqlRepositorio implements PreguntaRepositorio {
 	
 	@Override
 	public int inserta(Pregunta obj) {
-		String sql="insert into pregunta values(?,?,?,?)";
+		String sql="insert into pregunta values(null,?,?,?)";
 		Object[] val= {obj.getnPregunta(),obj.getEnunciado(),obj.getIdMateria()};
 		return jdbcTemplate.update(sql, val);
 	}

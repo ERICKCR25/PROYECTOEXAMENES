@@ -19,7 +19,7 @@ public class RespuestaMySqlRepositorio implements RespuestaRepositorio {
 	
 	@Override
 	public int inserta(Respuesta obj) {
-		String sql="insert into respuesta values(?,?,?)";
+		String sql="insert into respuesta values(null,?,?,?)";
 		Object[] val= {obj.getDetalle(),obj.getTipo(),obj.getIdPregunta()};
 		return jdbcTemplate.update(sql,val);
 	}
@@ -40,7 +40,7 @@ public class RespuestaMySqlRepositorio implements RespuestaRepositorio {
 
 	@Override
 	public List<Respuesta> lista(int idPregunta) {
-		List <Respuesta> lista= jdbcTemplate.query("select * from respuesta  where idPregunta like ?",new Object[] {idPregunta+"%"}, new RowMapper<Respuesta>() {
+		List <Respuesta> lista= jdbcTemplate.query("select * from respuesta  where idPregunta = ?",new Object[] {idPregunta}, new RowMapper<Respuesta>() {
             @Override
             public Respuesta mapRow(ResultSet rs, int rowNum) throws SQLException {
             	Respuesta obj= new Respuesta();

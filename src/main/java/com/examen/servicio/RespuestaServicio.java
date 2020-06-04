@@ -6,8 +6,8 @@ import com.examen.entidad.Respuesta;
 
 public interface RespuestaServicio {
 
-	public abstract int inserta(Respuesta obj);
-	public abstract int elimina(int idRespuesta);
-	public abstract int actualiza(Respuesta obj);
-	public abstract List<Respuesta> lista(int idPregunta);
+	public abstract int insertaRespuesta(Respuesta obj);
+	public abstract int eliminaRespuesta(int idRespuesta);
+	public abstract int actualizaRespuesta(Respuesta obj);
+	public abstract List<Respuesta> listaRespuesta(int idPregunta);
 }
