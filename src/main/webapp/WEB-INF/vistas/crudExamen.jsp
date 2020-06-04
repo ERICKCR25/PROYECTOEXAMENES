@@ -208,7 +208,7 @@
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_numPreguntas">Numero de Preguntas</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_numPreguntas" name="numPreguntas" placeholder="Ingrese la fecha de inicio" type="text" maxlength="10"/>
+													<input class="form-control" id="id_act_numPreguntas" name="numPreguntas" placeholder="Ingrese la fecha de inicio" type="text" maxlength="15"/>
 		                                        </div>
 		                                    </div>    
 		                                    <div class="form-group">
