@@ -115,13 +115,13 @@
 		                                     <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_reg_nombre">Nombre</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_reg_nombre" name="nombre" placeholder="Ingrese el Nombre" type="text" maxlength="20"/>
+													<input class="form-control" id="id_reg_nombre" name="nombre" placeholder="Ingrese el Nombre" type="text" maxlength="200"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_reg_descripcion">descripcion</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_reg_descripcion" name="descripcion" placeholder="Ingrese la fecha de inicio" type="text" maxlength="10"/>
+													<input class="form-control" id="id_reg_descripcion" name="descripcion" placeholder="Ingrese la fecha de inicio" type="text" maxlength="200"/>
 		                                        </div>
 		                                    </div>
 		                                    <input type="hidden" name="claves" id="claves" value="">
@@ -195,13 +195,13 @@
 		                                     <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_nombre">Nombre</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_nombre" name="nombre" placeholder="Ingrese el nombre" type="text" maxlength="100"/>
+													<input class="form-control" id="id_act_nombre" name="nombre" placeholder="Ingrese el nombre" type="text" maxlength="200"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
 		                                        <label class="col-lg-3 control-label" for="id_act_descripcion">descripcion</label>
 		                                        <div class="col-lg-5">
-													<input class="form-control" id="id_act_descripcion" name="descripcion" placeholder="Ingrese el descripcion" type="text" maxlength="100"/>
+													<input class="form-control" id="id_act_descripcion" name="descripcion" placeholder="Ingrese el descripcion" type="text" maxlength="200"/>
 		                                        </div>
 		                                    </div>
 		                                   <input type="hidden" name="claves" id="id_act_claves" value="">
