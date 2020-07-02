@@ -19,7 +19,7 @@ public class ExamenMySqlRepositorio implements ExamenRepositorio {
 
 	@Override
 	public int inserta(Examen obj) {
-		String sql = "insert into Examen values(?,?,?,?,?,?,?)";
+		String sql = "insert into Examen values s (?,?,?,?,?,?,?)";
 		Object[] val = { obj.getNombre(), obj.getDescripcion(), obj.getClaves(), obj.getNumPreguntas(),
 				obj.getValorAprobatorio(), obj.getValorTotal(), obj.getPorAprobacion() };
 		return jdbcTemplate.update(sql, val);
